@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[absolute]{textpos}
+\usepackage[default]{raleway}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{titlesec, comment, tabularx, makecell, listings, array, setspace, geometry, graphicx, xcolor, xparse, fancyvrb, relsize, fancyhdr, booktabs, hyperref}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{eurosym}
+\geometry{a4paper, left=2cm, right=2cm, top=1cm, bottom=1.8cm}
+\renewcommand{\headrulewidth}{0pt}
+
+% Definisci uno stile per i comandi git
+\definecolor{light-gray}{gray}{0.92}
+
+\lstdefinestyle{code}{
+    frame=single,
+    framesep=1mm,
+    rulecolor=\color{light-gray},
+    backgroundcolor=\color{light-gray},
+    basicstyle=\ttfamily,
+}
+
+% ----------------------------- Definizione tabella ---------------------------
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+%\setcellgapes{2ex} % Imposta l'altezza dell'header (2ex)
+
+
+% ------------------------------Metadati indice --------------------------------
+\title{\textbf{\fontsize{28}{6}\selectfont Indice}}
+\author{\fontsize{14}{6}\selectfont Byte Your Dreams}
+\date{ottobre 30, 2024}
+
+
+% -----------------------------Creazione footer --------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\footrulewidth}{0.4pt}
+\lfoot{
+    \parbox[c]{1.5cm}{\includegraphics[width=1.5cm]{docsSouce/images/byd_logo}}
+}
+\rfoot{\thepage}
+
+
+% -----------------------------Creazione footer --------------------------------
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\cfoot{\thepage}
+
+% --------------------------Modifica formato hyperlinks ------------------------
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    pdftitle={Preventivo costi e assunzione impegni},
+    pdfpagemode=FullScreen,
+}
+
+% ------------------------------- Valore sotto-paragrafi indice --------------------------------------
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\titleformat{\section}
+{\normalfont\huge\bfseries}{\thesection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}{\thesubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+% ------------------------------- Front Page ---------------------------------------
+
+
+\begin{document}
+
+% --------------------------Aggiunta firma finale ------------------------
+\begin{textblock*}{\textwidth}(0.78\textwidth, 1\textheight)
+    Il responsabile: Lorenzo Albertin
+\end{textblock*}
+% ------------------------------------------------------------------------
+\pagestyle{fancy}
+\begin{center}
+\vspace*{-2cm}
+\includegraphics[width = 0.7\textwidth]{docsSouce/images/byd_logo-logotipo.png}
+\fontsize{12}{6}\textcolor[RGB]{60, 60, 60} 
+{\textit{byteyourdreams.swe@gmail.com}} \\
+\vspace{0.5cm}
+\fontsize{16}{6}\selectfont Lettera di presentazione \\
+\vspace{0.5cm}
+\end{center}
+
+\section*{Informazioni documento}
+\def\arraystretch{1.2}
+\begin{tabular}{>{\raggedleft\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.6\textwidth}c}
+\hline
+\addlinespace
+\textbf{Data} & 30/10/2024 \vspace{10pt} \\
+\textbf{Redattore} & A.M. Margarit  \\ & L. Zanesco \vspace{10pt} \\
+\textbf{Verificatore} & Y. Huang  \\ & A. Mio \\ & O.F. Stiglet \vspace{10pt} \\
+\textbf{Amministratore} & L. Albertin \vspace{10pt} \\
+\textbf{Destinatari} & T. Vardanega \\ & R. Cardin \vspace{10pt}
+\end{tabular}
+
+\pagebreak 
+
+% ------------------------- Changelog ----------------------------
+
+
+% ------------------------- Generazione automatica indice ----------------------
+
+
+% ------------------------ INIZIO DOCUMENTO ----------------------
+\flushleft
+
+\textbf{\textit{Byte Your Dreams}} vuole annunciare la propria candidatura per la realizzazione del progetto
+\textbf{Vimar GENIALE}, commissionato dall’azienda \textbf{\textit{Vimar}}.
+\bigskip
+
+Di seguito `e disponibile la documentazione relativa al progetto:
+\begin{center}
+    \url{https://github.com/Byte-Your-Dreams/Documents}
+\end{center}
+
+All'interno della documentazione sono esposti:
+\begin{itemize}
+    \item \textbf{Verbali Esterni:}
+        \begin{itemize}
+        \item INSERIRE DATA - INSERIRE NOME AZIENDA
+        \item INSERIRE DATA - INSERIRE NOME AZIENDA
+    \end{itemize}
+    \item \textbf{Verbali Interni:}
+            \begin{itemize}
+                \item 16/10/2024
+                \item 21/10/2024
+            \end{itemize}
+    \item \textbf{Preventivo costi e assunzione impegni}
+    \item \textbf{Analisi dei capitolati con motivazioni scelte}
+\end{itemize}
+
+Il costo stimato per la realizzazione del progetto è di \textbf{11160\euro}, con una data di consegna prevista entro e non oltre il \textbf{18/04/2024}.
+\bigskip
+Di seguito, i membri del gruppo:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Nominativo} & \textbf{Matricola}\\ \hline
+Lorenzo Albertin & 2076438\\
+Yixin Huang & 2042347\\
+Ane-Marie Margarit & 1217649\\
+Armando Mio & 1223862\\
+Oliver Florin Stiglet & 2044895\\
+Luca Zanesco & 2057493\\
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+\begin{flushright}Distinti saluti, \\
+\textit{\textbf{Byte Your Dreams}}\end{flushright}
+
+\end{document}
