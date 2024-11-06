@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[absolute]{textpos}
+\usepackage[default]{raleway}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{titlesec, comment, tabularx, makecell, listings, array, setspace, geometry, graphicx, xcolor, xparse, fancyvrb, relsize, fancyhdr, booktabs, hyperref}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{eurosym}
+\geometry{a4paper, left=2cm, right=2cm, top=1cm, bottom=1.8cm}
+\renewcommand{\headrulewidth}{0pt}
+
+% Definisci uno stile per i comandi git
+\definecolor{light-gray}{gray}{0.92}
+
+\lstdefinestyle{code}{
+    frame=single,
+    framesep=1mm,
+    rulecolor=\color{light-gray},
+    backgroundcolor=\color{light-gray},
+    basicstyle=\ttfamily,
+}
+
+% ----------------------------- Definizione tabella ---------------------------
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+%\setcellgapes{2ex} % Imposta l'altezza dell'header (2ex)
+
+
+% ------------------------------Metadati indice --------------------------------
+\title{\textbf{\fontsize{28}{6}\selectfont Indice}}
+\author{\fontsize{14}{6}\selectfont Byte Your Dreams}
+\date{ottobre 29, 2024}
+
+
+% -----------------------------Creazione footer --------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\footrulewidth}{0.4pt}
+\lfoot{
+    \parbox[c]{1.5cm}{\includegraphics[width=1.5cm]{docsSouce/images/byd_logo}}
+}
+\rfoot{\thepage}
+
+
+% -----------------------------Creazione footer --------------------------------
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\cfoot{\thepage}
+
+% --------------------------Modifica formato hyperlinks ------------------------
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    pdftitle={Preventivo costi e assunzione impegni},
+    pdfpagemode=FullScreen,
+}
+
+% ------------------------------- Valore sotto-paragrafi indice --------------------------------------
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\titleformat{\section}
+{\normalfont\huge\bfseries}{\thesection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}{\thesubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+% ------------------------------- Front Page ---------------------------------------
+
+
+\begin{document}
+
+% --------------------------Aggiunta firma finale ------------------------
+\begin{textblock*}{\textwidth}(0.78\textwidth, 1\textheight)
+    Il responsabile: L. Albertin
+\end{textblock*}
+% ------------------------------------------------------------------------
+\pagestyle{fancy}
+\begin{center}
+\vspace*{-2cm}
+\includegraphics[width = 0.7\textwidth]{docsSouce/images/byd_logo-logotipo.png}
+\fontsize{12}{6}\textcolor[RGB]{60, 60, 60}{\textit{byteyourdreams.swe@gmail.com}} \\
+\vspace{0.5cm}
+\fontsize{16}{6}\selectfont Preventivo costi e assunzione impegni \\
+\vspace{0.5cm}
+\end{center}
+
+\section*{Informazioni documento}
+\def\arraystretch{1.2}
+\begin{tabular}{>{\raggedleft\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.6\textwidth}c}
+\hline
+\addlinespace
+\textbf{Data} & 29/10/2024 \vspace{10pt} \\
+\textbf{Redattore} & A. Mio \vspace{10pt} \\
+\textbf{Verificatore} & L. ALbertin \vspace{10pt} \\
+\textbf{Amministratore} & L. Albertin \vspace{10pt} \\
+\textbf{Destinatari} & T. Vardanega \\ & R. Cardin \vspace{10pt}
+\end{tabular}
+
+\pagebreak 
+
+% ------------------------- Changelog ----------------------------
+
+
+% ------------------------- Generazione automatica indice ----------------------
+
+
+% ------------------------ INIZIO DOCUMENTO ----------------------
+\flushleft
+
+\section{Impegni orari}
+
+Ogni componente del gruppo \textit{\textbf{Byte Your Dreams}} si impegna a lavorare al progetto per un monte ore totale di 92 ore produttive ciascuno.
+Ogni membro proverà ogni ruolo per lo stesso ammontare di ore, in modo da suddividere equamente il carico.\\
+Sottostante si trova una tabella dove sono riportati i costi orari per ruolo.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Ruoli} & \textbf{\makecell{Costo\\ orario\\ (\euro)}} & \textbf{\makecell{Ore\\ previste per\\ ruolo}} & \textbf{\makecell{Ore\\ previste per\\ membro}} & \textbf{\makecell{Costo per\\ ruolo\\ (\euro)}} \\ \hline
+\textbf{\textit{Amministratore}}    & 30 & 48  & 8  & 1440  \\ \hline
+\textbf{\textit{Responsabile}}  & 20 & 48  & 8  & 960   \\ \hline
+\textbf{\textit{Analista}}        & 25 & 72  & 12  & 1800  \\ \hline
+\textbf{\textit{Progettista}}     & 25 & 120 & 20 & 3000  \\ \hline
+\textbf{\textit{Programmatore}}   & 15 & 114 & 19 & 1710  \\ \hline
+\textbf{\textit{Verificatore}}    & 15 & 150 & 25 & 2250  \\ \hline
+\textbf{TOTALE} & -  & 540 & 92 & 11160 \\ \hline
+\end{tabular}
+\caption{Tabella dei ruoli, costi orari e ore di lavoro}
+\label{tab:ruoli_costi_dettagliati}
+\end{table}
+\section{Descrizione Ruoli}
+\begin{itemize}
+    \item  \textbf{Amministratore}: Gestisce il progetto, le risorse e le attività. Assicura l'efficienza di procedure, strumenti e tecnologie a supporto del \textit{Way of Working}\textsubscript{G}, contribuendo al miglioramento continuo del flusso di lavoro.
+    \item  \textbf{Responsabile}: Supervisiona il progetto, gestendo il team e le risorse, pianificando le \textit{attività}\textsubscript{}{g}, coordinando il lavoro e assicurando il rispetto delle scadenze. Inoltre, approva il rilascio di prodotti parziali o finali e fa da collegamento tra il team e gli stakeholder;
+    \item  \textbf{Analista}: Studia e definisce i requisiti del \textit{software}\textsubscript{G} interagendo con i clienti e gli stakeholder. Traducono i requisiti aziendali in specifiche tecniche chiare per gli sviluppatori;
+    \item  \textbf{Progettista}: Si occupa della progettazione del \textit{sistema}\textsubscript{G}, defininendo l'\textit{architettura}\textsubscript{G}, le componenti e le loro interazioni. Si basano sulle specifiche fornite dagli analisti;
+    \item  \textbf{Programmatore}: È responsabile della scrittura del codice del \textit{software}\textsubscript{G}, seguendo le specifiche fornite dai progettisti;
+    \item  \textbf{Verificatore}: Esegue il controllo qualità del software\textsubscript{G}, verificando che il codice e la documentazione rispettino gli \textit{standard}\textsubscript{G} di programmazione e i requisiti specificati. Inoltre controlla che non siano presenti errori.
+\end{itemize}
+
+\section{Preventivo dei costi}
+Il costo stimato per il progetto è di \textbf{11160.00\euro}. Sono state considerate la pianificazione presentata e la fase preliminare di analisi.
+La stima tiene conto di ogni fase del progetto,
+
+\section{Scadenza di consegna}
+Il gruppo stima di consegnare il prodotto finito relativo al capitolato “\textbf{Vimar GENIALE}" proposto dall’azienda \textit{\textbf{Vimar}} entro e non oltre il 18/04/2025.
+
+
+\end{document}
