@@ -1,0 +1,204 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[absolute]{textpos}
+\usepackage[default]{raleway}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{titlesec, comment, tabularx, makecell, listings, array, setspace, geometry, graphicx, xcolor, xparse, fancyvrb, relsize, fancyhdr, booktabs, hyperref}
+\usepackage{colortbl}
+\geometry{a4paper, left=2cm, right=2cm, top=1cm, bottom=1.8cm}
+\renewcommand{\headrulewidth}{0pt}
+
+% Definisci uno stile per i comandi git
+\definecolor{light-gray}{gray}{0.92}
+
+\lstdefinestyle{code}{
+    frame=single,
+    framesep=1mm,
+    rulecolor=\color{light-gray},
+    backgroundcolor=\color{light-gray},
+    basicstyle=\ttfamily,
+}
+
+% ----------------------------- Definizione tabella ---------------------------
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+%\setcellgapes{2ex} % Imposta l'altezza dell'header (2ex)
+
+
+% ------------------------------Metadati indice --------------------------------
+\title{\textbf{\fontsize{28}{6}\selectfont Indice}}
+\author{\fontsize{14}{6}\selectfont Byte Your Dreams}
+\date{ottobre 16, 2024}
+
+% -----------------------------Creazione footer --------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\footrulewidth}{0.4pt}
+\lfoot{
+    \parbox[c]{1.5cm}{\includegraphics[width=1.5cm]{./../images/byd_logo.png}}
+}
+\rfoot{\thepage}
+
+
+% -----------------------------Creazione footer --------------------------------
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\cfoot{\thepage}
+
+% --------------------------Modifica formato hyperlinks ------------------------
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    pdftitle={Verbale Interno 16/10/2024},  %inserisci data verbale
+    pdfpagemode=FullScreen,
+}
+
+% ------------------------------- Valore sotto-paragrafi indice --------------------------------------
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\titleformat{\section}
+{\normalfont\huge\bfseries}{\thesection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}{\thesubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+% ------------------------------- Front Page ---------------------------------------
+
+
+\begin{document}
+
+% --------------------------Aggiunta firma finale ------------------------
+\begin{textblock*}{\textwidth}(0.78\textwidth, 1\textheight)
+    Il responsabile: L. Albertin
+\end{textblock*}
+% ------------------------------------------------------------------------
+\pagestyle{fancy}
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{./../images/BYD_logo-logotipo.png} \\
+\fontsize{12}{6}\textcolor[RGB]{60, 60, 60}{\textit{byteyourdreams.swe@gmail.com}} \\
+\vspace{0.5cm}
+\fontsize{16}{6}\selectfont Verbale Interno $\cdot$ Data: 16/10/2024 \\
+\vspace{0.5cm}
+\end{center}
+
+
+
+
+\section*{Informazioni documento}
+\def\arraystretch{1.2}
+\begin{tabular}{>{\raggedleft\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.6\textwidth}c}
+\hline
+\addlinespace
+\textbf{Luogo} & Discord \vspace{10pt} \\
+\textbf{Orario} & 17:00 - 20:00 \vspace{10pt} \\
+\textbf{Redattore} & A.M. Margarit\\ & L. Zanesco \vspace{10pt} \\
+\textbf{Verificatore} & A. Mio \\ & O.F. Stiglet \\ & Y. Huang \vspace{10pt} \\
+\textbf{Amministratore} & L. Albertin \vspace{10pt} \\
+\textbf{Destinatari} & T. Vardanega \\ & R. Cardin \vspace{10pt} \\
+\textbf{Partecipanti} & L. Albertin \\ & A. Mio \\ & O.F. Stiglet \\ & L. Zanesco \\ & Y. Huang\\ & A.M. Margarit \\\vspace{10pt} \\
+\end{tabular}
+
+\pagebreak 
+% ------------------------- Changelog ----------------------------
+
+\section*{Registro delle modifiche}
+\begin{center}
+    \begin{tabular}{|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|}
+    \hline
+    \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Dettaglio} \\ \hline
+    0.0.2 & 25/10/2024 & L. Zanesco & A. Mio & Riscrittura in latex\\ \hline
+    0.0.1 & 16/10/2024 & \makecell{L. Zanesco \\ A.M. Margarit} & L. Albertin & Prima redazione\\
+    \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+% ------------------------- Generazione automatica indice ----------------------
+\setstretch{1.5}
+\maketitle
+\thispagestyle{fancy}
+\tableofcontents
+\setstretch{1.2}
+\pagebreak
+
+% ------------------------ INIZIO DOCUMENTO ----------------------
+\flushleft
+
+\section{Revisione del periodo precedente}
+In considerazione del fatto che questo costituisce il nostro primo incontro e che nessuna \textit{attività}\textsubscript{G} è stata ancora avviata, ci è preclusa la possibilità di condurre una revisione di quanto fatto nel periodo precedente.
+
+\section{Ordine del giorno}
+    \subsection{Scelta nome e logo}
+    Dopo che ogni componente si è presentato al resto del gruppo, si è discusso sul nome e sul logo di quest’ultimo.
+    \subsection{Analisi e discussione capitolati proposti (più quotati)}
+    Dopo che ogni componente del gruppo ha espresso le proprie preferenze sono stati identificati i capitolati più votati:
+    \textbf{\begin{enumerate}
+        \item C2 - Vimar GENIALE
+        \item C5 - 3Dataviz
+        \item C9 - BuddyBot
+    \end{enumerate}}
+    \subsection{Definizione canali di comunicazione}
+    Si è scelto di utilizzare \textit{Discord} e \textit{Whatsapp} come canali di comunicazione.
+    
+    \subsection{Programmazione riunioni}
+    Si è deciso di fissare delle riunioni settimanali, salvo necessità, per discutere di quanto è stato affrontato durante la settimana, e per decidere le successive \textit{attività}\textsubscript{G} da svolgere.\\
+    Il prossimo incontro si terrà il 21/10/2024 su \textit{Discord}.
+    
+    \subsection{Definizione linee guida}
+    Ogni incontro è guidato da domande riguradanti il \textit{Way Of Working}\textsubscript{G} del gruppo e dei singoli:
+    \textbf{\begin{itemize}
+        \item Come sono state svolte le attività assegnate?
+        \item C’è qualcosa che ne ha impedito lo svolgimento?
+        \item È possibile attuare miglioramenti?
+        \item Quali sono le successive attività da svolgere?
+        \item Chi le dovrà svolgere?
+        \item Come dovranno essere svolte?
+    \end{itemize}}
+    \pagebreak
+    \subsection{Definizione ruoli componente}
+    Fino alla data di aggiudicazione degli appalti, i ruoli di ciascun componente, per la stesura dei documenti, non cambieranno. Ruolo e nome di ogni componente sono visibili nella prima pagina.\\
+    I ruoli che si sono distinti sono riportati a seguito, assieme ad una breve descrizione:
+    \begin{itemize}
+        \item[$-$] \textbf{Amministratore}: definisce, controlla, e mantiene un corretto \textit{Way Of Working}\textsubscript{G}. In questo periodo svolge anche il ruolo del responsabile, ossia definisce i to-do con le relative scadenze  e priorità. Inoltre rappresenta il gruppo.
+        \item[$-$] \textbf{Redattore}: scrive i documenti.
+        \item[$-$] \textbf{Verificatore}: valida i documenti e li rilascia nella \textit{Repository}\textsubscript{G}
+    \end{itemize}
+    \subsection{Metodologia produzione e gestione documenti}
+    Per la realizzazione dei documenti, si è concordato, tra i membri, un modello prestabilito per facilitare i redattori, e per garantire l’omogeneità di quanto scritto nel documenti.\\
+    Ogni documento prima di essere rilasciato nella \textit{Repository}\textsubscript{G}, è gestito in una cartella condivisa su \textit{Google Drive}. Dopo che un documento è completato, viene validato dai verificatori, redatto con \LaTeX e infine caricato nella \textit{Repository}\textsubscript{G}.
+    \subsection{Programmazione incontri con le aziende}
+    Sono state documentate in un file le domande riguardati dubbi e/o incertezze sui capitolati, non solo per quelli più votati. Sono state inoltre definite delle bozze email da inviare alle aziende il giorno 21/10/2024.
+\section{Attività da svolgere}
+    \begin{center}
+        \begin{tabular}{|C{7cm}|C{1,5cm}|C{3cm}|}
+            \hline
+            \textbf{Titolo} & \textbf{N. Issue} & \textbf{Verificatore} \\
+            \hline
+            Valutazione Capitolati & 1 & A. Mio \\ \hline
+            Preventivo Costi & 2 & L. Albertin \\ \hline
+            Lettera di presentazione & 3 & \makecell{Y. Huang \\ O.F. Stiglet}  \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+\end{document}

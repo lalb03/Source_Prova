@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[absolute]{textpos}
+\usepackage[default]{raleway}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{titlesec, comment, tabularx, makecell, listings, array, setspace, geometry, graphicx, xcolor, xparse, fancyvrb, relsize, fancyhdr, booktabs, hyperref}
+\usepackage{colortbl}
+\geometry{a4paper, left=2cm, right=2cm, top=1cm, bottom=1.8cm}
+\renewcommand{\headrulewidth}{0pt}
+
+% Definisci uno stile per i comandi git
+\definecolor{light-gray}{gray}{0.92}
+
+\lstdefinestyle{code}{
+    frame=single,
+    framesep=1mm,
+    rulecolor=\color{light-gray},
+    backgroundcolor=\color{light-gray},
+    basicstyle=\ttfamily,
+}
+
+% ----------------------------- Definizione tabella ---------------------------
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+%\setcellgapes{2ex} % Imposta l'altezza dell'header (2ex)
+
+
+% ------------------------------Metadati indice --------------------------------
+\title{\textbf{\fontsize{28}{6}\selectfont Indice}}
+\author{\fontsize{14}{6}\selectfont Byte Your Dreams}
+\date{ottobre 21, 2024}
+
+% -----------------------------Creazione footer --------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\footrulewidth}{0.4pt}
+\lfoot{
+    \parbox[c]{1.5cm}{\includegraphics[width=1.5cm]{./../images/byd_logo.png}}
+}
+\rfoot{\thepage}
+
+
+% -----------------------------Creazione footer --------------------------------
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\renewcommand{\footrulewidth}{0.4pt}
+%\cfoot{\thepage}
+
+% --------------------------Modifica formato hyperlinks ------------------------
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    pdftitle={Verbale Interno 21/10/2024},  %inserisci data verbale
+    pdfpagemode=FullScreen,
+}
+
+% ------------------------------- Valore sotto-paragrafi indice --------------------------------------
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\titleformat{\section}
+{\normalfont\huge\bfseries}{\thesection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsection}
+{\normalfont\Large\bfseries}{\thesubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\subsubsection}
+{\normalfont\large\bfseries}{\thesubsubsection}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{0.2cm}{}
+\titlespacing*{\paragraph}{0pt}{0.5cm}{0.1cm}
+
+% ------------------------------- Front Page ---------------------------------------
+
+
+\begin{document}
+
+% --------------------------Aggiunta firma finale ------------------------
+\begin{textblock*}{\textwidth}(0.78\textwidth, 1\textheight)
+    Il responsabile: L. Albertin\\
+    
+\end{textblock*}
+% ------------------------------------------------------------------------
+\pagestyle{fancy}
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{./../images/BYD_logo-logotipo.png} \\
+\fontsize{12}{6}\textcolor[RGB]{60, 60, 60}{\textit{byteyourdreams.swe@gmail.com}} \\
+\vspace{0.5cm}
+\fontsize{16}{6}\selectfont Verbale Interno $\cdot$ Data: 21/10/2024 \\
+\vspace{0.5cm}
+\end{center}
+
+
+
+
+\section*{Informazioni documento}
+\def\arraystretch{1.2}
+\begin{tabular}{>{\raggedleft\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}p{0.6\textwidth}c}
+\hline
+\addlinespace
+\textbf{Luogo} & Discord \vspace{10pt} \\
+\textbf{Orario} & 18:00 - 20:00 \vspace{10pt} \\
+\textbf{Redattore} & A.M. Margarit \\ & L. Zanesco \vspace{10pt} \\
+\textbf{Verificatore} & A. Mio \\ & O.F. Stiglet \\ & Y. Huang \vspace{10pt} \\
+\textbf{Amministratore} & L. Albertin \vspace{10pt} \\
+\textbf{Destinatari} & T. Vardanega \\ & R. Cardin \vspace{10pt} \\
+\textbf{Partecipanti} & L. Albertin \\ & A. Mio \\ & O.F. Stiglet \\ & L. Zanesco \\ & Y. Huang\\ & A.M. Margarit \\\vspace{10pt} \\
+\end{tabular}
+
+\pagebreak 
+% ------------------------- Changelog ----------------------------
+
+\section*{Registro delle modifiche}
+\begin{center}
+    \begin{tabular}{|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|}
+    \hline
+    \textbf{Versione} & \textbf{Data} & \textbf{Autore} & \textbf{Verificatore} & \textbf{Dettaglio} \\ \hline
+    0.0.2 & 25/10/2024 & A.M. Margarit & Y. Huang & Riscrittura in latex\\ \hline
+    0.0.1 & 16/10/2024 & \makecell{L. Zanesco \\ A.M. Margarit} & O.F. Stiglet & Prima redazione\\
+    \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+% ------------------------- Generazione automatica indice ----------------------
+\setstretch{1.5}
+\maketitle
+\thispagestyle{fancy}
+\tableofcontents
+\setstretch{1.2}
+\pagebreak
+
+% ------------------------ INIZIO DOCUMENTO ----------------------
+\flushleft
+
+\section{Revisione del periodo precedente}
+Revisionando \textit{attività}\textsubscript{G} svolte fino ad ora, si è notato che la metodologia per la redazione dei documenti attuata fino ad ora non era ottimale. La trasposizione da Docs a \latex richiede una rielaborazione del testo, aggiungendo un ulteriore rischio di errori e richiedendo un'ulteriore verifica.
+
+\section{Ordine del giorno}
+    \subsection{Revisione documenti prodotti}
+    Tutti i documenti redatti fino al momento dell’incontro, sono stati verificati e saranno caricati nella \textit{repository}\textsubscript{}{G} nei giorni seguenti.
+    \subsection{Rivalutazione metodologie per la redazione dei documenti}
+    Si è deciso di creare direttamente i documenti in \latex. Questi non saranno caricati più su Google Drive, ma su una \textit{repository}\textsubscript{G} privata in modo da rendere più efficiente la modifica dei file. Una volta validati, verranno generati i file PDF e caricati nella \textit{repository}\textsubscript{G} principale.
+    \subsection{Redazione documento “Analisi dei Capitolati”}
+    E’ stato redatto per intero il documento “\textbf{Analisi dei Capitolati}”. Durante la redazione, sono state fatte nuove considerazioni riguardo alcuni capitolati precedentemente valutati.
+    \subsectino{Prima stesura documenti “Preventivo Costi e assunzione degli impegni” e “Lettera di Presentazione Candidatura”}
+    Dopo una discussione sull'assunzione degli impegni per ogni singolo componente del gruppo, si è iniziata la stesura del relativo documento. E' stato inoltre redatto il documento "\textbf{Lettera di Presentazione}". 
+
+\section{Attività da svolgere}
+Non sono state definite nuove \textit{attività}\textsubscript{G} da svolgere.
+
+\end{document}
