@@ -35,8 +35,10 @@ def process_repo():
 
             try:
                 compile_tex(tex_path, output_dir)
+                print(f"Successfully compiled: {tex_path}")
             except subprocess.CalledProcessError:
                 print(f"Errore nella compilazione di {tex_path}")
 
 if __name__ == "__main__":
+    print(f"Compiling {source_path} to {output_dir}")
     process_repo()
