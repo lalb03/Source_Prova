@@ -40,7 +40,7 @@ jobs:
           git pull
 
       - name: Run python script
-        run: python main.py
+        run: python DocsSource/main.py
           
 
       - name: Add, commit and push changes
