@@ -5,13 +5,11 @@ destination_repo = 'Documents'
 
 def get_modified_files():
      os.chdir(source_repo)
-
      result = subprocess.run(
           ['git', 'diff', '--name-only', '--diff-filter=AMR', 'HEAD'],
           stdout=subprocess.PIPE,
           text=True
-     )
-     print(f"Git diff output:", result.stdout)
+        )
      modified_files=[line for line in result.stdout.splitlines()
                       if line.endswith('.tex') and 'templates' not in line and 'Documenti Esterni/Verbali' not in line
                     ]
@@ -22,8 +20,12 @@ def compile_tex(sorce_path, output_dir):
     command = [
         'latexmk', '-pdf', '-output-directory=' + output_dir, sorce_path
     ]
-    print(f"Running command: {' '.join(command)}")
     subprocess.run(command, check=True)
+
+    clean_command = [
+        'latexmk', '-c', '-output-directory=' + output_dir, sorce_path
+    ]
+    subprocess.run(clean_command, check=True)
 
 def process_repo():
     modified_files = get_modified_files()
@@ -37,10 +39,8 @@ def process_repo():
 
             try:
                 compile_tex(tex_path, output_dir)
-                print(f"Successfully compiled: {tex_path}")
             except subprocess.CalledProcessError:
                 print(f"Errore nella compilazione di {tex_path}")
 
 if __name__ == "__main__":
-    print(f"Compiling {source_repo} to {destination_repo}")
     process_repo()
