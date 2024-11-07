@@ -11,6 +11,7 @@ def get_modified_files():
           stdout=subprocess.PIPE,
           text=True
      )
+     print(f"Git diff output:", result.stdout)
      modified_files=[line for line in result.stdout.splitlines()
                       if line.endswith('.tex') and 'templates' not in line and 'Documenti Esterni/Verbali' not in line
                     ]
@@ -21,11 +22,12 @@ def compile_tex(sorce_path, output_dir):
     command = [
         'latexmk', '-pdf', '-output-directory=' + output_dir, sorce_path
     ]
+    print(f"Running command: {' '.join(command)}")
     subprocess.run(command, check=True)
 
 def process_repo():
     modified_files = get_modified_files()
-
+    print("Modified files:", modified_files)
     for file in modified_files:
             tex_path=os.path.join(source_repo, file)
             relative_dir = os.path.dirname(file)
