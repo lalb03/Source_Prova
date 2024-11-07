@@ -37,7 +37,7 @@ jobs:
           cd Documents
           git config --global user.name "github-action[bot]"
           git config --global user.emain "github-actions[bot]@users.noreply.github.com"
-          git pull
+          git pull origin main
 
       - name: Run python script
         run: python DocsSource/main.py
