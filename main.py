@@ -42,5 +42,5 @@ def process_repo():
                 print(f"Errore nella compilazione di {tex_path}")
 
 if __name__ == "__main__":
-    print(f"Compiling {source_path} to {output_dir}")
+    print(f"Compiling {source_repo} to {destination_repo}")
     process_repo()
