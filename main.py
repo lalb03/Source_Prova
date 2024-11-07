@@ -4,18 +4,18 @@ source_repo = 'DocsSource'
 destination_repo = 'Documents'
 
 def get_modified_files():
-     os.chdir(source_repo)
-     result = subprocess.run(
-          ['git', 'diff', '--name-only', '--diff-filter=AMR', 'HEAD'],
-          stdout=subprocess.PIPE,
-          text=True
-        )
-     print("Git diff output:", result.stdout)
-     modified_files=[line for line in result.stdout.splitlines()
-                      if line.endswith('.tex') and 'templates' not in line and 'Documenti Esterni/Verbali' not in line
-                    ]
-     os.chdir('..')
-     return modified_files
+    os.chdir(source_repo)
+    result = subprocess.run(
+        ['git', 'diff', '--name-only', '--diff-filter=AMR', 'origin/main'],
+        stdout=subprocess.PIPE,
+        text=True
+    )  
+    # Verifica l'output del diff e filtra solo i file .tex
+    modified_files = [line for line in result.stdout.splitlines()
+                      if line.endswith('.tex') and 'templates' not in line and 'Documenti Esterni/Verbali' not in line]
+    os.chdir('..')
+    print(f"Modified files: {modified_files}")
+    return modified_files
 
 def compile_tex(sorce_path, output_dir):
     command = [
