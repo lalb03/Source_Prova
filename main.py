@@ -10,6 +10,7 @@ def get_modified_files():
           stdout=subprocess.PIPE,
           text=True
         )
+     print("Git diff output:", result.stdout)
      modified_files=[line for line in result.stdout.splitlines()
                       if line.endswith('.tex') and 'templates' not in line and 'Documenti Esterni/Verbali' not in line
                     ]
