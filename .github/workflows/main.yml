@@ -13,7 +13,6 @@ jobs:
       - name: Clone DocsSource
         uses: actions/checkout@v4
         with:
-          path: DocsSource
           token: ${{secrets.ACCESS_TOKEN}}
           fetch-depth: 2
       
@@ -21,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: lalb03/Prova
+          path: Documents
           token: ${{secrets.ACCESS_TOKEN}}
 
       - name: Set up Python
