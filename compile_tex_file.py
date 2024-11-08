@@ -1,8 +1,7 @@
 import os, sys, subprocess
 
 def compile_tex(tex_file):
-    output_dir = os.path.dirname(tex_file)
-    output_dir = output_dir.replace("Source_Prova", "Documents")
+    output_dir = os.path.join("Documents", os.path.dirname(tex_file))
     print(f"output: {output_dir}")
     if not os.path.exists(output_dir):
         os.makedirs(output_dir, exist_ok=True)
