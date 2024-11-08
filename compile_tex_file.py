@@ -1,7 +1,9 @@
 import os, sys, subprocess
 
 def compile_tex(tex_file):
-    output_dir = os.path.dirname(tex_file).replace("DocsSource/", "Documents/")
+    output_dir = os.path.dirname(tex_file)
+    output_dir = output_dir.replace("DocsSource", "Documents")
+    print(f"output: {output_dir}")
     os.makedirs(output_dir, exist_ok=True)
 
     command = [
