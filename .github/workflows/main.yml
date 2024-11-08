@@ -15,7 +15,7 @@ jobs:
         with:
           path: DocsSource
           token: ${{secrets.ACCESS_TOKEN}}
-          fetch-depth: 0
+          fetch-depth: 2
       
       - name: Clone destination repo
         uses: actions/checkout@v4
@@ -39,7 +39,7 @@ jobs:
 
       - name: Get changed file
         id: changed-files
-        uses: jitterbit/get-changed-files@v1        
+        uses: jitterbit/get-changed-files@v45       
 
       - name: Pull latest changes
         run: |
