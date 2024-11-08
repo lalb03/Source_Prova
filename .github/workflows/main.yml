@@ -56,8 +56,8 @@ jobs:
           git pull
           cd ..
 
-          if [[ -n "${{ steps.changed_file.outputs.deleted_files }}"]] then
-            for file in ${{ steps.changed-files.outputs.deleted_files }}; do
+          if [[ -n "${{steps.changed_file.outputs.deleted_files}}"]] then
+            for file in ${{steps.changed_file.outputs.deleted_files}}; do
               if [[ $file == *.tex]]
                 python DocsSource/delete_file.py "$file"
               fi
@@ -66,7 +66,7 @@ jobs:
             echo "0 file has been deleted."
           fi
 
-          for file in ${{ steps.changed-files.outputs.all_modified_file }}; do
+          for file in ${{steps.changed_file.outputs.all_modified_file}}; do
             python DocsSource/compile_tex_file.py "$file"
           done
 
