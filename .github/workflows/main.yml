@@ -71,8 +71,10 @@ jobs:
             echo "0 file have been deleted."
           fi
 
-          for file in ${{steps.changed-files.outputs.all_modified_file}}; do
-            python Source_Prova/compile_tex_file.py "$file"
+          for file in ${{ steps.changed-files.outputs.all_modified_file }}; do
+            if [[ $file == *.tex ]]; then
+                python Source_Prova/compile_tex_file.py "$file"
+            fi
           done
 
           cd Documents
