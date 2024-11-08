@@ -1,7 +1,7 @@
 import os, sys
 
 def delete_file(tex_file):
-    pdf_file = tex_file.replace("DocsSource/", "Documents/").replace(".tex", ".pdf")
+    pdf_file = os.path.join("Documents", os.path.dirname(tex_file)).replace('.tex', '.pdf')
     try:
         if os.path.exists(pdf_file):
             os.remove(pdf_file)
