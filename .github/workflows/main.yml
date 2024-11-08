@@ -39,7 +39,7 @@ jobs:
 
       - name: Get changed file
         id: changed-files
-        uses: jitterbit/get-changed-files@v45       
+        uses: tj-actions/changed-files@v45       
 
       - name: Pull latest changes
         run: |
