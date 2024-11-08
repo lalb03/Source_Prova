@@ -63,7 +63,7 @@ jobs:
 
           if [[ -n "${{steps.changed-files.outputs.deleted_files}}" ]]; then
             for file in ${{steps.changed-files.outputs.deleted_files}}; do
-              if [[ $file == *.tex]]
+              if [[ $file == *.tex]]; then
                 python DocsSource/delete_file.py "$file"
               fi
             done
