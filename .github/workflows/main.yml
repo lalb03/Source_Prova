@@ -13,7 +13,6 @@ jobs:
       - name: Clone DocsSource
         uses: actions/checkout@v4
         with:
-          path: DocsSource
           token: ${{secrets.ACCESS_TOKEN}}
           fetch-depth: 2
       
@@ -36,7 +35,10 @@ jobs:
           texlive \
           texlive-latex-extra \
           texlive-lang-italian
-          
+
+      - name: Configure Git Safe Directory for DocsSource
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE/DocsSource
+
       - name: Get changed file
         id: changed-files
         uses: tj-actions/changed-files@v45 
