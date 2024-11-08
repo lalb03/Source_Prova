@@ -37,7 +37,7 @@ jobs:
           texlive-lang-italian
 
       - name: Configure Git Safe Directory for DocsSource
-        run: git config --global --add safe.directory $GITHUB_WORKSPACE/DocsSource
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE/Prova_Source
 
       - name: Get changed file
         id: changed-files
@@ -61,7 +61,7 @@ jobs:
           echo "Deleted files: ${{ steps.changed-files.outputs.deleted_files }}"
           echo "Modified files: ${{ steps.changed-files.outputs.all_modified_files }}"
 
-          if [[ -n "${{steps.changed-files.outputs.deleted_files}}" ]] then
+          if [[ -n "${{steps.changed-files.outputs.deleted_files}}" ]]
             for file in ${{steps.changed-files.outputs.deleted_files}}; do
               if [[ $file == *.tex]]
                 python DocsSource/delete_file.py "$file"
