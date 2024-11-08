@@ -58,8 +58,6 @@ jobs:
           git config --global user.emain "github-actions[bot]@users.noreply.github.com"
           git pull
           cd ..
-          echo "Deleted files: ${{ steps.changed-files.outputs.deleted_files }}"
-          echo "Modified files: ${{ steps.changed-files.outputs.all_modified_files }}"
           ls
           if [[ -n "${{ steps.changed-files.outputs.deleted_files }}" ]]; then
             for file in ${{ steps.changed-files.outputs.deleted_files }}; do
@@ -72,7 +70,11 @@ jobs:
           fi
 
           for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
-            if [[ $file == *.tex ]]; then
+            if [[ $file != *Esterni/Verbali/**.tex ]] \
+            && [[ $file != */Sezioni/**.tex ]] \
+            && [[ $file != */Sottosezioni/**.tex ]] \
+            && [[ $path != */Casi_uso/**.tex ]] \
+            && [[ $file == *.tex ]]; then
                 python compile_tex_file.py "$file"
             fi
           done
