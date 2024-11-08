@@ -73,7 +73,7 @@ jobs:
 
           for file in ${{ steps.changed-files.outputs.all_modified_files }}; do
             if [[ $file == *.tex ]]; then
-                python Source_Prova/compile_tex_file.py "$file"
+                python compile_tex_file.py "$file"
             fi
           done
 
