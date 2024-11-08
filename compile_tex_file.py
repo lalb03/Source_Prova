@@ -4,7 +4,8 @@ def compile_tex(tex_file):
     output_dir = os.path.dirname(tex_file)
     output_dir = output_dir.replace("Source_Prova", "Documents")
     print(f"output: {output_dir}")
-    os.makedirs(output_dir, exist_ok=True)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
 
     command = [
         'latexmk', '-pdf', '-output-directory=' + output_dir, tex_file
