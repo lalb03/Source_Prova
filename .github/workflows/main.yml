@@ -61,7 +61,7 @@ jobs:
           cd ..
           echo "Deleted files: ${{ steps.changed-files.outputs.deleted_files }}"
           echo "Modified files: ${{ steps.changed-files.outputs.all_modified_files }}"
-
+          ls
           if [[ -n "${{ steps.changed-files.outputs.deleted_files }}" ]]; then
             for file in ${{ steps.changed-files.outputs.deleted_files }}; do
               if [[ $file == *.tex ]]; then
