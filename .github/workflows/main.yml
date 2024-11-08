@@ -63,8 +63,8 @@ jobs:
 
           if [[ -n "${{steps.changed-files.outputs.deleted_files}}" ]]; then
             for file in ${{steps.changed-files.outputs.deleted_files}}; do
-              if [[ $file == *.tex]]; then
-                python DocsSource/delete_file.py "$file"
+              if [[ $file == *.tex ]] then
+                python Source_Prova/delete_file.py "$file"
               fi
             done
           else
@@ -72,7 +72,7 @@ jobs:
           fi
 
           for file in ${{steps.changed-files.outputs.all_modified_file}}; do
-            python DocsSource/compile_tex_file.py "$file"
+            python Source_Prova/compile_tex_file.py "$file"
           done
 
           cd Documents
