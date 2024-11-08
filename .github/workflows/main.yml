@@ -39,7 +39,10 @@ jobs:
 
       - name: Get changed file
         id: changed-files
-        uses: tj-actions/changed-files@v45       
+        uses: tj-actions/changed-files@v45 
+
+      - name: Configure Git Safe Directory
+        run: git config --global --add safe.directory /__w/my-repo/my-repo     
 
       - name: Pull latest changes
         run: |
