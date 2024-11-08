@@ -38,6 +38,10 @@ jobs:
           texlive-latex-extra \
           texlive-lang-italian
 
+      - name: Get changed file
+        id: changed_file
+        uses: tj-actions/changed-files@v43        
+
       - name: Pull latest changes
         run: |
           cd Documents
@@ -45,12 +49,28 @@ jobs:
           git config --global user.emain "github-actions[bot]@users.noreply.github.com"
           git pull origin master
 
-      - name: Run python script
-        run: python DocsSource/main.py
-          
-
-      - name: Add, commit and push changes
+      - name: Compiling documents
         run: |
+          cd Documents
+          git config --global user.name "github-action[bot]"
+          git config --global user.emain "github-actions[bot]@users.noreply.github.com"
+          git pull
+          cd ..
+          
+          if [[ -n "${{ steps.changed_file.outputs.deleted_files }}"]] then
+            for file in ${{ steps.changed-files.outputs.deleted_files }}; do
+              if [[ $file == *.tex]]
+                python DocsSource/delete_file.py "$file"
+              fi
+            done
+          else
+            echo "0 file has been deleted."
+          fi
+
+          for file in ${{ steps.changed-files.outputs.all_modified_file }}; do
+            python DocsSource/compile_tex_file.py "$file"
+          done
+
           cd Documents
           git add .
           if git diff --cached --quiet; then
