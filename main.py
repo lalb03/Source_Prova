@@ -5,9 +5,8 @@ destination_repo = 'Documents'
 
 def get_modified_files():
     os.chdir(source_repo)
-    head_ref = os.getenv('GITHUB_HEAD_REF', 'HEAD')
     result = subprocess.run(
-        ['git', 'diff', '--name-only', '--diff-filter=AMR', 'origin/main', f'origin/{head_ref}'],
+        ['git', 'diff', '--name-only', '--diff-filter=AMR', 'origin/main'],
         stdout=subprocess.PIPE,
         text=True
     )  
